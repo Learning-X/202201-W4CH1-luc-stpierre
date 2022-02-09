@@ -1,4 +1,4 @@
-const Gentleman = ({ gentleman, action }) => {
+const Gentleman = ({ gentleman, action, deleteAction }) => {
   const getInitial = (name) => {
     const splitName = name.split(" ");
     return splitName[0].length <= 3
@@ -40,7 +40,10 @@ const Gentleman = ({ gentleman, action }) => {
         </ul>
       </div>
       <i className="icon gentleman__icon fas fa-check"></i>
-      <i className="icon gentleman__icon gentleman__icon--delete fas fa-times"></i>
+      <i
+        className="icon gentleman__icon gentleman__icon--delete fas fa-times"
+        onClick={deleteAction}
+      ></i>
     </li>
   );
 };

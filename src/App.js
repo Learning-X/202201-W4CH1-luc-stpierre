@@ -30,6 +30,13 @@ function App() {
     setGentlemen(newGentlemen);
   };
 
+  const removeGentleman = (id) => {
+    setTimeout(() => {
+      const newGentlemen = gentlemen.filter((gentleman) => gentleman.id !== id);
+      setGentlemen(newGentlemen);
+    }, 5);
+  };
+
   return (
     <div className="container">
       <header className="main-header">
@@ -49,6 +56,7 @@ function App() {
                 key={gentleman.id}
                 gentleman={gentleman}
                 action={() => toggleGentlemen(gentleman.id)}
+                deleteAction={() => removeGentleman(gentleman.id)}
               />
             );
           })}
