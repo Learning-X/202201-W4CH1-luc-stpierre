@@ -4,9 +4,9 @@ import Info from "./components/Info";
 import gentlemenData from "./data/gentlemenData";
 
 function App() {
-  const [numberOfGentlemen, setNumberOfGentlement] = useState(gentlemenData);
+  const [gentlemen, setGentlemen] = useState(gentlemenData);
 
-  const selectedPerson = numberOfGentlemen.filter(
+  const selectedGentlemen = gentlemen.filter(
     (person) => person.selected
   ).length;
 
@@ -17,7 +17,7 @@ function App() {
       </header>
 
       <section className="controls">
-        <Info selectedPerson={selectedPerson} />
+        <Info selectedGentlemen={selectedGentlemen} />
         <button className="button button--select">Select all</button>
       </section>
 
