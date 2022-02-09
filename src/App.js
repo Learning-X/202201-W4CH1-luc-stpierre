@@ -30,6 +30,11 @@ function App() {
     setGentlemen(newGentlemen);
   };
 
+  const removeGentleman = (id) => {
+    const newGentlemen = gentlemen.filter((gentleman) => gentleman.id !== id);
+    setGentlemen(newGentlemen);
+  };
+
   return (
     <div className="container">
       <header className="main-header">
