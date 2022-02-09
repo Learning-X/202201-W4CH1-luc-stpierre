@@ -4,7 +4,11 @@ import Info from "./components/Info";
 import gentlemenData from "./data/gentlemenData";
 
 function App() {
-  const [numberOfGentlemen, setNumberOfGentlement] = useState(0);
+  const [numberOfGentlemen, setNumberOfGentlement] = useState(gentlemenData);
+
+  const selectedPerson = numberOfGentlemen.filter(
+    (person) => person.selected
+  ).length;
 
   return (
     <div className="App">
@@ -13,8 +17,7 @@ function App() {
       </header>
 
       <section className="controls">
-        {/* <p className="info">0 gentlemen pointing at you</p> */}
-        <Info numberOfGentlemen={numberOfGentlemen} />
+        <Info selectedPerson={selectedPerson} />
         <button className="button button--select">Select all</button>
       </section>
     </div>

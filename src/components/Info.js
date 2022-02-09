@@ -1,6 +1,6 @@
-const Info = ({ numberOfGentlemen }) => {
+const Info = ({ selectedPerson }) => {
   return (
-    <p className="info">{`${numberOfGentlemen} gentlemen pointing at you`}</p>
+    <p className="info">{`${selectedPerson} gentlemen pointing at you`}</p>
   );
 };
 
