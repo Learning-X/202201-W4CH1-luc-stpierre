@@ -1,4 +1,5 @@
 import "./App.css";
+import Info from "./components/Info";
 function App() {
   return (
     <div className="App">
@@ -7,7 +8,8 @@ function App() {
       </header>
 
       <section className="controls">
-        <p className="info">0 gentlemen pointing at you</p>
+        {/* <p className="info">0 gentlemen pointing at you</p> */}
+        <Info />
         <button className="button button--select">Select all</button>
       </section>
     </div>
