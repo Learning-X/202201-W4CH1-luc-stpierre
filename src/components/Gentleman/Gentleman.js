@@ -1,4 +1,13 @@
 const Gentleman = ({ gentleman }) => {
+  const getInitial = (name) => {
+    const splitName = name.split(" ");
+    return splitName[0].length <= 3
+      ? splitName[1][0].toUpperCase()
+      : splitName[0][0].toUpperCase();
+  };
+
+  const initialLetter = getInitial(gentleman.name);
+
   return (
     <li className="gentleman">
       <div className="gentleman__avatar-container">
@@ -7,7 +16,7 @@ const Gentleman = ({ gentleman }) => {
           src={`img/${gentleman.picture}`}
           alt={`${gentleman.name} pointing at you`}
         />
-        <span className="gentleman__initial">F</span>
+        <span className="gentleman__initial">{initialLetter}</span>
       </div>
       <div className="gentleman__data-container">
         <h2 className="gentleman__name">{gentleman.name}</h2>
