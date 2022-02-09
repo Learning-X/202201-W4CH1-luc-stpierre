@@ -31,8 +31,10 @@ function App() {
   };
 
   const removeGentleman = (id) => {
-    const newGentlemen = gentlemen.filter((gentleman) => gentleman.id !== id);
-    setGentlemen(newGentlemen);
+    setTimeout(() => {
+      const newGentlemen = gentlemen.filter((gentleman) => gentleman.id !== id);
+      setGentlemen(newGentlemen);
+    }, 5);
   };
 
   return (
@@ -54,6 +56,7 @@ function App() {
                 key={gentleman.id}
                 gentleman={gentleman}
                 action={() => toggleGentlemen(gentleman.id)}
+                deleteAction={() => removeGentleman(gentleman.id)}
               />
             );
           })}
