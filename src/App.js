@@ -21,6 +21,15 @@ function App() {
     );
   };
 
+  const toggleGentlemen = (id) => {
+    const newGentlemen = [...gentlemen];
+    const gentlemanFound = newGentlemen.find(
+      (gentleman) => gentleman.id === id
+    );
+    gentlemanFound.selected = !gentlemanFound.selected;
+    setGentlemen(newGentlemen);
+  };
+
   return (
     <div className="container">
       <header className="main-header">
@@ -35,7 +44,13 @@ function App() {
       <main className="main">
         <ul className="gentlemen">
           {gentlemen.map((gentleman) => {
-            return <Gentleman key={gentleman.id} gentleman={gentleman} />;
+            return (
+              <Gentleman
+                key={gentleman.id}
+                gentleman={gentleman}
+                action={toggleGentlemen}
+              />
+            );
           })}
         </ul>
       </main>
