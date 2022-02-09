@@ -1,4 +1,4 @@
-const Gentleman = ({ gentleman }) => {
+const Gentleman = ({ gentleman, action }) => {
   const getInitial = (name) => {
     const splitName = name.split(" ");
     return splitName[0].length <= 3
@@ -8,8 +8,12 @@ const Gentleman = ({ gentleman }) => {
 
   const initialLetter = getInitial(gentleman.name);
 
+  const gentlemanClass = gentleman.selected
+    ? "gentleman selected"
+    : "gentleman";
+
   return (
-    <li className="gentleman">
+    <li className={gentlemanClass} onClick={action}>
       <div className="gentleman__avatar-container">
         <img
           className="gentleman__avatar"
