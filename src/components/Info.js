@@ -1,5 +1,7 @@
-const Info = () => {
-  return <p className="info">0 gentlemen pointing at you</p>;
+const Info = ({ numberOfGentlemen }) => {
+  return (
+    <p className="info">{`${numberOfGentlemen} gentlemen pointing at you`}</p>
+  );
 };
 
 export default Info;
