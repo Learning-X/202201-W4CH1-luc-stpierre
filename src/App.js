@@ -48,7 +48,7 @@ function App() {
               <Gentleman
                 key={gentleman.id}
                 gentleman={gentleman}
-                action={toggleGentlemen}
+                action={() => toggleGentlemen(gentleman.id)}
               />
             );
           })}
